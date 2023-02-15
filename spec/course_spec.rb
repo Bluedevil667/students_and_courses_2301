@@ -22,6 +22,5 @@ RSpec.describe Course do
     course_1.enroll(student1)
     course_1.enroll(student2)
     expect(course_1.full?).to be true
-    require 'pry'; binding.pry
   end
 end
