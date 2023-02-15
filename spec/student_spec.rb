@@ -9,7 +9,6 @@ RSpec.describe Student do
   it 'can have attributes' do
     student_1 = Student.new({name: "Morgan", age: 21})
 
-    require 'pry'; binding.pry
     expect(student_1.name).to eq("Morgan")
     expect(student_1.age).to eq(21)
     expect(student_1.scores).to eq([])
@@ -22,5 +21,13 @@ RSpec.describe Student do
     log_score_2 = student_1.log_score(78)
     expect(log_score_2).to eq([89, 78]) 
     expect(student_1.scores).to eq([89, 78])
+  end
+
+  it 'can find average of scores array' do
+    student_1 = Student.new({name: "Morgan", age: 21})
+    student_1.log_score(89)
+    log_score_2 = student_1.log_score(78)
+
+    expect(student_1.grade).to eq(83.5)
   end
 end
