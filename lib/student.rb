@@ -14,6 +14,9 @@ class Student
   end
 
   def grade
-    
+    sum = scores.sum
+    count = scores.count
+    grade = sum.to_f / count.to_f
+    grade
   end
 end
